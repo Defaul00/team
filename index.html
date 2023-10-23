@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
+      rel="stylesheet"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="./assets//font-awesome/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="nav.js"></script>
+
+    <title>PROJECT</title>
+  </head>
+  <body>
+    <style>
+      * {
+        font-family: "Gowun Dodum", sans-serif;
+      }
+
+      .mytitle {
+        width: 100%;
+        height: 250px;
+
+        background-image:  linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616_1280.jpg");
+        background-position: center;
+        background-size: cover;
+
+        color: white;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mytitle > button {
+        width: 200px;
+        height: 50px;
+
+        background-color: transparent;
+        color: white;
+
+        border-radius: 50px;
+        border: 1px solid white;
+
+        margin-top: 10px;
+      }
+
+      .mytitle > button:hover {
+        border: 2px solid white;
+      }
+
+      .mycomment {
+        color: gray;
+      }
+
+      .mycards {
+        margin: 20px auto 0px auto;
+        width: 95%;
+        max-width: 1200px;
+      }
+
+      .mypost {
+        width: 95%;
+        max-width: 500px;
+        margin: 20px auto 0px auto;
+        padding: 20px;
+        box-shadow: 0px 0px 3px 0px gray;
+
+        display: none;
+      }
+
+      .mybtns {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        margin-top: 20px;
+      }
+      .mybtns > button {
+        margin-right: 10px;
+      }
+
+      .nav-links {
+        margin: 0;
+        padding: 0;
+        color: #0b0c0c;
+        font-family: sans-serif;
+        letter-spacing: 1px;
+        font-weight: 300%;
+        width: 100%;
+        background-color: #131418;
+      }
+      body {
+        overflow-x: hidden;
+      }
+      nav {
+        height: 12vh;
+        width: 100%;
+        background-color: #131418;
+        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+        display: flex;
+        z-index: 10;
+      }
+
+      /*Styling logo*/
+      .logo {
+        padding: 1vh 1vw;
+        text-align: center;
+      }
+      .logo img {
+        height: 10vh;
+        width: 10vw;
+      }
+
+      /*Styling Links*/
+      .nav-links {
+        display: flex;
+        list-style: none;
+        width: 88vw;
+        padding: 0 0.7vw;
+        justify-content: space-evenly;
+        align-items: center;
+        text-transform: uppercase;
+      }
+      .nav-links li a {
+        text-decoration: none;
+        margin: 0 0.7vw;
+      }
+      .nav-links li a:hover {
+        color: #84c6dc;
+      }
+      .nav-links li {
+        position: relative;
+      }
+      .nav-links li a::before {
+        content: "";
+        display: block;
+        height: 3px;
+        width: 0%;
+        background-color: #61dafb;
+        position: absolute;
+        transition: all ease-in-out 250ms;
+        margin: 0 0 0 10%;
+      }
+      .nav-links li a:hover::before {
+        width: 80%;
+      }
+
+      /*Styling Buttons*/
+      .login-button {
+        background-color: transparent;
+        border: 1.5px solid #f2f5f7;
+        border-radius: 2em;
+        padding: 2vh 2vw;
+        margin-left: 2vw;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      .login-button:hover {
+        color: #131418;
+        background-color: #f2f5f7;
+        border: 1.5px solid #f2f5f7;
+        transition: all ease-in-out 350ms;
+      }
+      .join-button {
+        color: #131418;
+        background-color: #61dafb;
+        border: 1.5px solid #61dafb;
+        border-radius: 2em;
+        padding: 2vh 2vw;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      .join-button:hover {
+        color: #f2f5f7;
+        background-color: transparent;
+        border: 1.5px solid #f2f5f7;
+        transition: all ease-in-out 350ms;
+      }
+
+      /*Styling Hamburger Icon*/
+      .hamburger div {
+        width: 30px;
+        height: 3px;
+        background: #f2f5f7;
+        margin: 5px;
+        transition: all 0.3s ease;
+      }
+      .hamburger {
+        display: none;
+      }
+
+      /*Stying for small screens*/
+      @media screen and (max-width: 800px) {
+        nav {
+          position: fixed;
+          z-index: 3;
+        }
+        .hamburger {
+          display: block;
+          position: absolute;
+          cursor: pointer;
+          right: 5%;
+          top: 50%;
+          transform: translate(-5%, -50%);
+          z-index: 2;
+          transition: all 0.7s ease;
+        }
+        .nav-links {
+          position: fixed;
+          background: #131418;
+          height: 100vh;
+          width: 100%;
+          flex-direction: column;
+          -webkit-clip-path: circle(50px at 90% -10%);
+          clip-path: circle(50px at 90% -20%);
+          transition: all 1s ease-out;
+          pointer-events: none;
+        }
+        .nav-links.open {
+          -webkit-clip-path: circle(1000px at 90% -10%);
+          clip-path: circle(1000px at 90% -10%);
+          pointer-events: all;
+        }
+        .nav-links li {
+          opacity: 0;
+        }
+        .nav-links li:nth-child(1) {
+          transition: all 0.5s ease 0.2s;
+        }
+        .nav-links li:nth-child(2) {
+          transition: all 0.5s ease 0.4s;
+        }
+        .nav-links li:nth-child(3) {
+          transition: all 0.5s ease 0.6s;
+        }
+        .nav-links li:nth-child(4) {
+          transition: all 0.5s ease 0.7s;
+        }
+        .nav-links li:nth-child(5) {
+          transition: all 0.5s ease 0.8s;
+        }
+        .nav-links li:nth-child(6) {
+          transition: all 0.5s ease 0.9s;
+          margin: 0;
+        }
+        .nav-links li:nth-child(7) {
+          transition: all 0.5s ease 1s;
+          margin: 0;
+        }
+        li.fade {
+          opacity: 1;
+        }
+      }
+      /*Animating Hamburger Icon on Click*/
+      .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+      .toggle .line2 {
+        transition: all 0.7s ease;
+        width: 0;
+      }
+      .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+    </style>
+
+    <script>
+      $(document).ready(function () {
+        listing();
+      });
+
+      function listing() {
+        $.ajax({
+          type: "GET",
+          url: "/movie",
+          data: {},
+          success: function (response) {
+            let rows = response["movies"];
+            $("#cards-box").empty();
+            for (let i = 0; i < rows.length; i++) {
+              let image = rows[i]["image"];
+              let title = rows[i]["title"];
+              let description = rows[i]["description"];
+              let star = rows[i]["star"];
+              let comment = rows[i]["comment"];
+
+              let star_image = "⭐".repeat(star);
+
+              let temp_html = `
+              
+                  `;
+              $("#cards-box").append(temp_html);
+            }
+          },
+        });
+      }
+
+      function posting() {
+        let url = $("#url").val();
+        let star = $("#star").val();
+        let comment = $("#comment").val();
+
+        $.ajax({
+          type: "POST",
+          url: "/movie",
+          data: { url_give: url, star_give: star, comment_give: comment },
+          success: function (response) {
+            alert(response["msg"]);
+            window.location.reload();
+          },
+        });
+      }
+
+      function open_box() {
+        $("#post-box").show();
+      }
+      function close_box() {
+        $("#post-box").hide();
+      }
+    </script>
+
+    <div class="mytitle animate__animated animate__fadeInDown">
+      <div class="header animate__animated animate__backInDown"><h1><marquee direction="up" height="50">KNOWLEDGE</marquee></h1></div>
+      <div class="header animate__animated animate__backInDown"><h1><marquee direction="up" height="50">MAKES YOU GREAT</marquee></h1></div>
+    </div>
+    <nav>
+      <div class="hamburger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="nav-links animate__animated animate__fadeInRight">
+        <li><a href="index.html" style="color: whitesmoke;">Home</a></li>
+      <li><a href="About.html" style="color: whitesmoke;">About</a></li>
+      
+        <li><a href="https://wa.me/+62895620305863" style="color: whitesmoke;">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="mycards animate__animated animate__bounceInUp">
+      <div class="row row-cols-1 row-cols-md-4 g-4" id="cards-box">
+        <div class="col">
+          <div class="card h-100">
+            <video
+              autoplay
+              loop
+              muted
+              plays-inline
+              src="nebula.mp4"
+            ></video>
+            <div class="card-body">
+              <h5 class="card-title">Rainbow Nebula</h5>
+              <p class="card-text">
+                Nebula terbentuk dari berbagai hal (dan jenisnya juga
+                berbeda-beda). Kebanyakan nebula terbentuk dalam wujud nebula
+                emisi. Nebula emisi yang berisikan gas-gas terionisasi disebut
+                Daerah H II. Nebula seperti ini terbentuk ketika bintang yang
+                baru saja terbentuk mengionisasi gas yang ada di sekitarnya
+                sehingga menciptakan nebula emisi. Contoh dari Daerah H II
+                adalah Nebula Orion dan NGC 604..
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <video autoplay loop muted plays-inline src="bumi.mp4"></video>
+            <div class="card-body">
+              <h5 class="card-title">Bumi</h5>
+              <p class="card-text">
+                Bumi adalah planet terdekat ketiga dari Matahari yang merupakan
+                planet terpadat dan terbesar kelima dari delapan planet dalam
+                Tata Surya. Bumi juga merupakan planet terbesar dari empat
+                planet kebumian di Tata Surya. Bumi terkadang disebut dengan
+                dunia atau "Planet Biru". Bumi terbentuk sekitar 4,54 miliar
+                tahun yang lalu, dan kehidupan sudah muncul di permukaannya
+                paling tidak sekitar 3,5 miliar tahun yang lalu.
+              </p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col">
+          <div class="card h-100">
+            <video autoplay loop muted plays-inline src="bima.mp4"></video>
+            <div class="card-body">
+              <h5 class="card-title">Bimasakti</h5>
+              <p class="card-text">
+                Bimasakti adalah galaksi spiral yang besar, yang di dalamnya
+                terdapat Tata Surya, tempat planet Bumi beredar mengelilingi
+                matahari. Matahari hanya salah satu dari sekitar 200 miliar
+                sampai 400 miliar bintang yang membentuk galaksi Bima Sakti.
+                Galaksi ini termasuk dalam tipe Hubble SBbc dengan total massa
+                sekitar satu triliun kali massa matahari serta memiliki diameter
+                100.000 tahun cahaya dan ketebalan 1.000 tahun cahaya.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100">
+            <video autoplay loop muted plays-inline src="moon.mp4"></video>
+
+            <div class="card-body">
+              <h5 class="card-title">Bulan</h5>
+              <p class="card-text">
+                Bulan adalah satelit alami Bumi satu-satunya dan merupakan
+                satelit terbesar kelima dalam Tata Surya. Bulan juga merupakan
+                satelit alami terbesar di Tata Surya menurut ukuran planet yang
+                diorbitnya, dengan diameter 27%, kepadatan 60%, dan massa 1⁄81
+                (1.23%) dari Bumi. Di antara satelit alami lainnya, Bulan adalah
+                satelit terpadat kedua setelah Io, satelit Jupiter. .
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="hero">
+      <div class="content">
+        <p>
+          DIBUAT OLEH:ADAM,DEDEK,DIO &#169;
+          <script type="text/javascript">
+            var creditsyear = new Date();
+            document.write(creditsyear.getFullYear());
+          </script>
+          <a expr:href="data:blog.homepageUrl">
+            <font color="white"><data:blog.title /></font>
+          </a>
+        </p>
+        <p>
+          <font color="yellow"
+            ><a style="text-decoration: none; color: white;" class="social-media-icon"href="https://instagram.com/rdolfr12?igshid=MmU2YjMzNjRlOQ=="><span class="fab fa-instagram"></span>Dedek</a>
+            </font >
+            <font color="yellow"
+            ><a style="text-decoration: none; color: white;" class="social-media-icon"href="https://instagram.com/d_e_f_a_u_l_t_00?igshid=NjIwNzIyMDk2Mg=="><span class="fab fa-instagram"></span>Adam</a>
+            </font >
+            <a style="text-decoration: none; color: white;" class="social-media-icon"href="https://instagram.com/iniidiok_?igshid=NjIwNzIyMDk2Mg=="><span class="fab fa-instagram"></span>Dio</a>
+          </font >
+        </p>
+      </div>
+      <div class="waves"/>
+    </section>
+    <style>
+      :root {
+        --color: #88a520;
+      }
+
+      footer {
+        font-size: 15px;
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .content {
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .hero {
+        position: relative;
+        background: #990000;
+        color: white;
+        min-height: 300px; /* Use min-height instead of height */
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+       
+      }
+
+      .hero h2 {
+        position: relative;
+        z-index: 1;
+        font-size: 4.5rem;
+        margin: 0;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .hero p {
+        position: relative;
+        z-index: 1;
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.5);
+        line-height: 1.4;
+      }
+
+      /*==============================*/
+      .waves {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 250px;
+        background-color: var(--color);
+        box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+        transition: background-color 500ms; /* Added a transition property */
+      }
+
+      .waves::before,
+      .waves::after {
+        content: "";
+        position: absolute;
+        width: 300vw;
+        height: 300vw;
+        top: -65vw;
+        left: 50%;
+        transform: translate(-50%, -75%);
+      }
+
+      .waves::before {
+        border-radius: 44%;
+        background: rgba(51, 51, 51, 1);
+        animation: waves 8s linear infinite;
+      }
+
+      .waves::after {
+        border-radius: 44%;
+        background: rgba(51, 51, 51, 0.5);
+        animation: waves 15s linear infinite;
+      }
+
+      @keyframes waves {
+        0% {
+          transform: translate(-50%, -75%) rotate(0deg);
+        }
+        50% {
+          transform: translate(-50%, -75%) rotate(180deg);
+        }
+        100% {
+          transform: translate(-50%, -75%) rotate(360deg);
+        }
+      }
+    </style>
+    <b:template-script async="true" name="strm" version="1.0.0" />
+
+    <b:template-script async="true" name="indie" version="1.0.0" />
+
+    <b:template-script async="true" name="fancy" version="1.0.0" />
+
+    <b:template-script async="true" name="vegeclub" version="1.0.0" />
+
+    <b:template-script async="true" name="rockpool" version="1.0.0" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
